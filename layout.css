@@ -1,0 +1,209 @@
+/*
+Author: Judy H. Nguyen
+*/
+body
+{
+  background-color: #f4f8fa;
+}
+
+a
+{
+  text-decoration: none;
+  color: #afe3f8;
+}
+
+h2
+{
+  color: #b1e1e1;
+}
+
+h4
+{
+  color: #b1e1e1;
+}
+
+span.hidden-message{
+  opacity: 0.0;
+}
+span.shown-message{
+  opacity: 1.0;
+}
+
+.credit
+{
+  z-index: 1;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #afe3f8;
+  text-align: center;
+  font-size: 0;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width:25px;
+  box-shadow:rgba(0,0,0,0.06)2px 2px;
+  border: 1px solid #afe3f8;
+  border-radius: 100px;
+  background: #ffffff;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+
+.credit:hover{
+  font-size: 65%;
+  padding: 5px;
+  width: 150px;
+}
+
+.fixedimg
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #9b8c92;
+  text-align: center;
+  font-size: 0;
+
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width:70px;
+  height: 75px;
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #afe3f8;
+  border-radius: 10px;
+  background: #ffffff;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+
+.fixedimg:hover
+{
+  padding: 7px;
+  font-size: 65%;
+  width: 70px;
+}
+
+.blocky
+{
+  top: 190px; /* how do i horizaontally align to center?*/
+  left: 15px;
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #f9c6b0;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 75%;
+  background: #ffffff;
+  padding: 10px;
+  position: relative;
+  color: #c4d0d5;
+  border-radius: 20px;
+  float: left;
+  width: 60%;
+}
+
+.selection1
+{
+  display: inline-block;
+  top: 200px; /* align to always be the same no matter content size*/
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #dcd3ca;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 75%;
+  background: #ffffff;
+  padding: 12px;
+  position: relative;
+  color: #808b96;
+  left: 25px; /* align to always be the same no matter content size*/
+  width: 25%;
+  height: 200px;
+  overflow: scroll;
+}
+.selection1:hover
+{
+  color: #c4d0d5;
+}
+
+.selection2
+{
+    display: inline-block;
+    top: 0px; /* align to always be the same no matter content size*/
+    box-shadow:rgba(0,0,0,0.06)6px 6px;
+    border: 1px solid #dcd3ca;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+    font-size: 75%;
+    background: #ffffff;
+    padding: 12px;
+    position: relative;
+    color: #808b96;
+    left: 64px; /*align to always be the same no matter content size*/
+    width: 50%;
+}
+
+.selection2:hover
+{
+  color: #c4d0d5;
+}
+
+.selection3
+{
+  display: inline-block;
+  top: 10px; /* align to always be the same no matter content size*/
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #dcd3ca;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 75%;
+  background: #ffffff;
+  padding: 12px;
+  position: relative;
+  color: #808b96;
+  left: 600px; /*align to always be the same no matter content size*/
+  width: 50%;
+}
+
+.selection3:hover
+{
+  color: #c4d0d5;
+}
+
+.selection4
+{
+  display: inline-block;
+  top: 20px; /* align to always be the same no matter content size*/
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #dcd3ca;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 75%;
+  background: #ffffff;
+  padding: 12px;
+  position: relative;
+  color: #808b96;
+  left: 400px; /*align to always be the same no matter content size*/
+  width: 50%;
+}
+
+.selection4:hover
+{
+  color: #c4d0d5;
+}
+
+.score
+{
+  display: inline-block;
+  top: 220px; /* align to always be the same no matter content size*/
+  box-shadow:rgba(0,0,0,0.06)6px 6px;
+  border: 1px solid #dcd3ca;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 75%;
+  background: #ffffff;
+  padding: 12px;
+  position: relative;
+  color: #808b96;
+  left: 320px; /*align to always be the same no matter content size*/
+  width: 50%;
+}
+
+.score:hover
+{
+  color: #c4d0d5;
+}

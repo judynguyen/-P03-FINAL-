@@ -1,0 +1,55 @@
+<!--
+Author: Judy H. Nguyen
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="layout.css"/>
+    <meta charset="utf-8"/>
+    <title>Intelligence Test</title>
+    <script type="text/javascript" src="functions.js"></script>
+  </head>
+
+  <body lang="en-US">
+    <div style="width:100%">
+      <div class="fixedimg">
+        <img src="http://orig00.deviantart.net/7dd7/f/2016/263/4/7/chovie_by_mocchu-daid5al.gif" alt="anchovies">
+        <br><a href="pg1.html"><button class="submit" onclick="saveUserDetails()">submit</button></a>
+        <br><br>
+      </div>
+
+      <div class="selection1"><h2>User information</h2>
+        Hello and welcome to the first page of your intelligence test!
+        This test is not time and the total score will be displayed through your test and on the last page.
+        <br>The break-up of your score consists of your ability to correctly answer each question.
+        <br>To start, follow the prompts in the neighboring boxes.
+        <br>
+      </div>
+
+      <div id="usernameGroup" class="selection2">
+        <form id="input1" action="form_action.asp">
+          <br>
+          Please enter a name you would liked to be called by:<br>
+          <br><input onchange="validateUser()" id="username" type="text" value=""><br><br>
+          <span id="usernameError" class="control-label hidden-message">
+            Error Placeholder (hidden)
+          </span>
+        </form>
+      </div>
+
+      <div class="selection3">
+        <form id="input2" action="form_action.asp">
+          Age: <br><input onchange="validateAge()" id="age" type="text" value=""><br><br>
+        <span id="ageError" class="control-label hidden-message">
+            Error Placeholder (hidden)
+          </span>
+          <br><br>
+          Birth month: <br><input onchange="validateMonth()" id="month" type="text" value=""><br><br>
+          <span id="monthError" class="control-label hidden-message">
+              Error Placeholder (hidden)
+            </span>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

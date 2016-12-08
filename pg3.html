@@ -1,0 +1,75 @@
+<!--
+Author: Judy H. Nguyen
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="layout.css"/>
+    <meta charset="utf-8"/>
+    <title>Intelligence Test: 03</title>
+    <script type="text/javascript" src="functions.js"></script>
+  </head>
+
+  <body onload="replace()" lang="en-US">
+    <div style="width:100%">
+      <div class="credit">
+        <a href="index.html"><img src="http://orig03.deviantart.net/5959/f/2016/132/7/d/pastel_social_icon__home__by_gasara-da28dvm.gif" alt="home"></a>
+        <br><a href="index.html">index</a>
+      </div>
+      <div class="fixedimg">
+        <img src="http://orig00.deviantart.net/7dd7/f/2016/263/4/7/chovie_by_mocchu-daid5al.gif" alt="anchovies">
+        <br><a href="pg4.html"><button class="submit" onclick="saveUserDetails()">next</button></a>
+        <br><br>
+      </div>
+
+      <div class="selection1"><h2>Test 3</h2>
+        Welcome to the final page of your intelligence test! Please take a look at these examples to help you figure out how to solve the problems
+        given to you.
+        <br>These examples are done with the inputs: name, age, and birth month.
+        <h4>EXAMPLE 1</h4>
+        Name: Bobby <br> Age: 15 <br> Birth month: February
+        <br>Answer: 520227
+        <h4>EXAMPLE 2</h4>
+        Name: Judy <br> Age: 21 <br> Birth month: October
+        <br>Answer: 4251039
+        <h4>EXAMPLE 3</h4>
+        Name: Tom <br> Age: 6 <br> Birth month: May
+        <br>Answer: 39517
+        <h4>EXAMPLE 4</h4>
+        Name: James <br> Age: 11 <br> Birth month: April
+        <br>Answer: 516425
+        <h4>EXAMPLE 5</h4>
+        Name: Timmy <br> Age: 30 <br> Birth month: June
+        <br>Answer: 535646
+      </div>
+
+      <div class="selection2">
+        <form id="input1" action="form_action.asp">
+          <br>
+          Name: <span id="nameA">name</span> || Age: <span id="ageA">age</span> || Birth month: <span id="monthA">month</span>
+          <br>
+          <br><input type="text" id="a1" value="" onchange="calculateCookie()"><br><br>
+        </form>
+      </div>
+
+      <div class="selection3">
+        <form id="input2" action="form_action.asp">
+          <br>
+          Name: Johnny || Age: 16 || Birth month: February
+          <br>
+          <br><input type="text" id="a2" onchange="calculateA2()" value=""><br><br>
+        </form>
+      </div>
+
+        <div class="selection4">
+          <form id="input3" action="form_action.asp">
+            <br>
+            Name: Su || Age: 43 || Birth month: December
+            <br>
+            <br><input type="text" id="a3" onchange="calculateA3()" value=""><br><br>
+          </form>
+      </div>
+
+    </div>
+  </body>
+</html>
