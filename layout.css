@@ -79,24 +79,6 @@ span.shown-message{
   width: 70px;
 }
 
-.blocky
-{
-  top: 190px; /* how do i horizaontally align to center?*/
-  left: 15px;
-  box-shadow:rgba(0,0,0,0.06)6px 6px;
-  border: 1px solid #f9c6b0;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: center;
-  font-size: 75%;
-  background: #ffffff;
-  padding: 10px;
-  position: relative;
-  color: #c4d0d5;
-  border-radius: 20px;
-  float: left;
-  width: 60%;
-}
-
 .selection1
 {
   display: inline-block;
