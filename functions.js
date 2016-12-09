@@ -1,414 +1,115 @@
 /*
 Author: Judy H. Nguyen
 */
-var scoreGivenCC = false;
-var scoreGivenA2 = false;
-var scoreGivenA3 = false;
+var drink  = [];
 
-var scoreGivenP1 = false;
-var scoreGivenP2 = false;
-var scoreGivenP3 = false;
-
-var scoreGivenC1 = false;
-var scoreGivenC2 = false;
-var scoreGivenC3 = false;
-
-function saveUserDetails(){
+function saveName(){
   var name = document.getElementById("username").value;
-  var age = document.getElementById("age").value;
-  var month = document.getElementById("month").value;
-  month = month.toLowerCase();
-  if(month=="january"){
-    month = 1;
-  }
-  else if (month=="february") {
-    month = 2;
-  }
-  else if (month=="march") {
-    month = 3;
-  }
-  else if (month=="april") {
-    month = 4;
-  }
-  else if (month=="may") {
-    month = 5;
-  }
-  else if (month=="june") {
-    month = 6;
-  }
-  else if (month=="july") {
-    month = 7;
-  }
-  else if (month=="august") {
-    month = 8;
-  }
-  else if (month=="september") {
-    month = 9;
-  }
-  else if (month=="october") {
-    month = 10;
-  }
-  else if (month=="november") {
-    month = 11;
-  }
-  else if (month=="december") {
-    month = 12;
-  }
+  drink.push("Name: " + name);
+  setCookie("drinkInfo", drink);
   setCookie("uName", name);
-  setCookie("age", age);
-  setCookie("month", month);
 }
 
-/*
-replaces the first example with the user input cookies
+function displayDrink(){
+  var order = getCookie("drinkInfo");
+  var details = order.split(",");
+  var yourDrink = new Drink(details[0], details[1], details[2], details[3], details[4], details[5]);
+  document.getElementById("display").innerHTML = yourDrink.display();
+}
+
+function Drink(name, size, roast, temp, sugar, cream){
+  this.name = name;
+  this.size = size;
+  this.roast = roast;
+  this.temp = temp;
+  this.sugar = sugar;
+  this.cream = cream;
+
+  this.display = function(){
+    var drinkOrder = getCookie("drinkInfo");
+    var details = drinkOrder.split(",");
+    var order = ""
+    for(var i = 0; i<=details.length-1; i++){
+        order = order + details[i] + "<br/>";
+    }
+    return order;
+  };
+}
+
+function smallCoffee(){
+  var drinkA = getCookie("drinkInfo");
+  drink.push(drinkA);
+  drink.push("Size: small");
+  setCookie("drinkInfo", drink);
+  document.getElementById("pair1").innerHTML = "You have chosen the small";
+  //document.getElementById("drinkSize").innerHTML = "<br/>" + "Want a different size?" + "<br/>" + "<button onclick=\"changeSize()\">yes!</button>";
+
+}
+
+function medCoffee(){
+  var drinkA = getCookie("drinkInfo");
+  drink.push(drinkA);
+  drink.push("Size: medium");
+  setCookie("drinkInfo", drink);
+  document.getElementById("pair1").innerHTML = "You have chosen the medium";
+  //document.getElementById("drinkSize").innerHTML = "<br/>" + "Want a different size?" + "<br/>" + "<button onclick=\"changeSize()\">yes!</button>";
+}
+
+function lrgCoffee(){
+  var drinkA = getCookie("drinkInfo");
+  drink.push(drinkA);
+  drink.push("Size: large");
+  setCookie("drinkInfo", drink);
+  document.getElementById("pair1").innerHTML = "You have chosen the large";
+  //document.getElementById("drinkSize").innerHTML = "<br/>" + "Want a different size?" + "<br/>" + "<button onclick=\"changeSize()\">yes!</button>";
+}
+
+/*function changeSize(){
+  document.getElementById("pair1").innerHTML =   "<br>" + "<img src=\"http://orig13.deviantart.net/3c1f/f/2016/343/5/6/small_coffee_by_mocchu-dar2o1x.gif\" alt=\"small\">" +
+    "<img src=\"http://orig03.deviantart.net/048c/f/2016/343/9/d/med_coffee_by_mocchu-dar2o1y.gif\" alt=\"med\">" +
+    "<img src=\"http://orig07.deviantart.net/2cb4/f/2016/343/3/3/large_coffee_by_mocchu-dar2o20.gif\" alt=\"large\">" +
+    "<br>" +
+    "<button onclick=\"smallCoffee()\">small</button>" +
+    "<button onclick=\"medCoffee()\">medium</button>" +
+    "<button onclick=\"lrgCoffee()\">large</button>" +
+    "<br>" +
+    "<br>";
+    document.getElementById("drinkSize").innerHTML = "";
+}
 */
-function replace(){
-  var name = getCookie("uName");
-  var age = getCookie("age");
-  var month = getCookie("month");
-  if(month==1){
-    month = "January";
-  }
-  else if (month==2) {
-    month = "February";
-  }
-  else if (month==3) {
-    month = "March";
-  }
-  else if (month==4) {
-    month = "April";
-  }
-  else if (month==5) {
-    month = May;
-  }
-  else if (month==6) {
-    month = "June";
-  }
-  else if (month==7) {
-    month = "July";
-  }
-  else if (month==8) {
-    month = "August";
-  }
-  else if (month==9) {
-    month = "September";
-  }
-  else if (month==10) {
-    month = "October";
-  }
-  else if (month==11) {
-    month = "November";
-  }
-  else if (month=12) {
-    month = "December";
-  }
-  document.getElementById("nameA").innerHTML=name;
-  document.getElementById("ageA").innerHTML=age;
-  document.getElementById("monthA").innerHTML=month;
+
+function addRoast(){
+  var drinkA = getCookie("drinkInfo");
+  drink = drinkA.split(",");
+  var roast = "Roast: " + document.getElementById("roast").value;
+  drink.push(roast);
+  setCookie("drinkInfo", drink);
 }
 
-/*
-adds the length of name + (name length + age) + birth month + sum of all previous numbers
-*/
-function calculateCookie(){
-  var score = 0;
-  var userInput = document.getElementById("a1").value;
-  userInput = userInput.toString();
-
-  var name = getCookie("uName");
-  console.log(name);
-  var nameLength = name.length;
-  console.log("name length: " + nameLength);
-  var nameLSTR = nameLength.toString();
-  var age = getCookie("age");
-  console.log("age: " + age);
-  var ageNameSum = Number(nameLength)+Number(age);
-  console.log("sum of age and name: " + ageNameSum);
-  var ansSTR = ageNameSum.toString();
-  console.log("age+name sum in string: " + ansSTR);
-  var month = getCookie("month");
-  var monthStr = month.toString();
-  var cookieSum = Number(nameLength)+Number(ageNameSum)+Number(month);
-  var cookieStr = cookieSum.toString();
-  var finalCS = nameLSTR+ansSTR+monthStr+cookieStr
-  finalCS = finalCS.toString();
-  console.log("final cookie string: " + finalCS);
-
-  if(userInput == finalCS && scoreGivenCC==false){
-    setCookie("scoreTotal", score);
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-    else{
-      if(scoreGivenCC==true && userInput == finalAnswer){
-        alert("You have already entered a value for this form.");
-      }
-      else{
-        alert("Try again.");
-    }
-  }
+function addTemp() {
+  var drinkA = getCookie("drinkInfo");
+  drink = drinkA.split(",");
+  var temp = "Temp: " + document.getElementById("temp").value;
+  drink.push(temp);
+  setCookie("drinkInfo", drink);
 }
 
-/*
-adds the length of name + (name length + age) + birth month + sum of all previous numbers
-*/
-function calculateA2(){
-  var userInput = document.getElementById("a2").value;
-  userInput = userInput.toString();
-
-  var finalSum = 622230;
-  if(userInput == finalSum && scoreGivenA2==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    console.log(cookie);
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-  else{
-    if(scoreGivenA2==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-}
+function addSugar() {
+  var drinkA = getCookie("drinkInfo");
+  drink = drinkA.split(",");
+  var sugar = "Sugar: " + document.getElementById("sugar").value;
+  drink.push(sugar);
+  setCookie("drinkInfo", drink);
 }
 
-/*
-adds the length of name + (name length + age) + birth month + sum of all previous numbers
-*/
-function calculateA3(){
-  var scoreGiven = false;
-  var userInput = document.getElementById("a3").value;
-  userInput = userInput.toString();
-
-  var finalSum = 2451259;
-  if(userInput == finalSum && scoreGivenA3==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-  else{
-    if(scoreGivenA3==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-}
+function addCream() {
+  var drinkA = getCookie("drinkInfo");
+  drink = drinkA.split(",");
+  var cream = "Cream: " + document.getElementById("cream").value;
+  drink.push(cream);
+  setCookie("drinkInfo", drink);
 }
 
-function calculateP1(){
-  var scoreGiven = false;
-  var userInput = document.getElementById("p1").value;
-  userInput = userInput.toString();
-  userInput = userInput.toUpperCase();
-
-  var finalAnswer = "PG5S";
-  finalAnswer = finalAnswer.toString();
-  console.log(scoreGiven);
-  if(userInput == finalAnswer && scoreGivenP1==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    console.log(cookie);
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-  else{
-    if(scoreGivenP1==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-  }
-}
-
-function calculateP2(){
-  var scoreGiven = false;
-  var userInput = document.getElementById("p2").value;
-  userInput = userInput.toString();
-  userInput = userInput.toUpperCase();
-
-  var finalAnswer = "RG6S";
-  finalAnswer = finalAnswer.toString();
-
-  if(userInput == finalAnswer && scoreGivenP2==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-  else{
-    if(scoreGivenP2==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-  }
-}
-
-function calculateP3(){
-  var scoreGiven = false;
-  var userInput = document.getElementById("p3").value;
-  userInput = userInput.toString();
-  userInput = userInput.toUpperCase();
-
-  var finalAnswer = "YG4S";
-  finalAnswer = finalAnswer.toString();
-
-  if(userInput == finalAnswer && scoreGivenP3==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGiven=true;
-  }
-  else{
-    if(scoreGivenP3==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-  }
-}
-
-//Validate function courtesy of K. Buffardi
-function validateUser(){
-  //Grab the user's input and store in variables
-  var userEntered = document.getElementById("username").value;
-  if(isNaN(userEntered))
-  {
-    document.getElementById("usernameError").innerHTML="";
-    document.getElementById("usernameError").classList.remove("hidden-message");
-    document.getElementById("usernameError").classList.add("shown-message");
-  }
-  else {
-    //Show message that there is an error with the username...
-    document.getElementById("usernameError").innerHTML="Please enter a name without numbers.";
-    document.getElementById("usernameError").classList.remove("hidden-message");
-    document.getElementById("usernameError").classList.add("shown-message");
-  }
-}
-
-function validateAge(){
-  var ageEntered = document.getElementById("age").value;
-  if(isNaN(ageEntered)==false)
-  {
-    document.getElementById("ageError").innerHTML="";
-    document.getElementById("ageError").classList.remove("hidden-message");
-    document.getElementById("ageError").classList.add("shown-message");
-  }
-  else
-  {
-    document.getElementById("ageError").innerHTML="Please use numerical values.";
-    document.getElementById("ageError").classList.remove("hidden-message");
-    document.getElementById("ageError").classList.add("shown-message");
-  }
-}
-
-function validateMonth(){
-  var monthEntered = document.getElementById("month").value;
-
-  if(isNaN(monthEntered))
-  {
-    document.getElementById("monthError").innerHTML="";
-    document.getElementById("monthError").classList.remove("hidden-message");
-    document.getElementById("monthError").classList.add("shown-message");
-  }
-  else
-  {
-    document.getElementById("monthError").innerHTML="Please enter a valid month.";
-    document.getElementById("monthError").classList.remove("hidden-message");
-    document.getElementById("monthError").classList.add("shown-message");
-  }
-}
-
-function checkC1(){
-  var userInput = document.getElementById("c1").value;
-  var finalAnswer = 4;
-
-  if(userInput == finalAnswer && scoreGivenC1==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGivenC1=true;
-  }
-  else{
-    if(scoreGivenC1==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-    }
-  }
-}
-
-function checkC2(){
-  var userInput = document.getElementById("c2").value;
-
-  var finalAnswer = 5;
-
-  if(userInput == finalAnswer && scoreGivenC2==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGivenC2=true;
-  }
-  else{
-    if(scoreGivenC1==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-}
-}
-
-function checkC3(){
-  var userInput = document.getElementById("c3").value;
-
-  var finalAnswer = 7;
-
-  if(userInput == finalAnswer && scoreGivenC3==false){
-    var cookie = Number(getCookie("scoreTotal"));
-    cookie+=1;
-    setCookie("scoreTotal", cookie);
-    alert("Correct! You earned 1 point. \nYour total score is now " + getCookie("scoreTotal") + ".");
-    scoreGivenC3=true;
-  }
-  else{
-    if(scoreGivenC1==true && userInput == finalAnswer){
-      alert("You have already entered a value for this form.");
-    }
-    else{
-      alert("Try again.");
-  }
-}
-}
-
-function displayScore(){
-  var score = Number(getCookie("scoreTotal"));
-  console.log(score + "/9");
-  var percentage = score/9;
-  console.log(percentage);
-  percentage = percentage.toFixed(2);
-  console.log(percentage);
-  percentage = percentage*100;
-  document.getElementById("display").innerHTML = percentage;
-}
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

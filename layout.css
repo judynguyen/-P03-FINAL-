@@ -3,7 +3,7 @@ Author: Judy H. Nguyen
 */
 body
 {
-  background-color: #f4f8fa;
+  background-image: url("http://orig01.deviantart.net/1a6d/f/2013/055/f/d/cadbury_chocolate_custom_box_background_by_gasara-d5w2af4.gif");
 }
 
 a
@@ -14,7 +14,7 @@ a
 
 h2
 {
-  color: #b1e1e1;
+  color: #808B96;
 }
 
 h4
@@ -100,110 +100,54 @@ span.shown-message{
 .selection1
 {
   display: inline-block;
-  top: 200px; /* align to always be the same no matter content size*/
+  border-radius: 10px;
   box-shadow:rgba(0,0,0,0.06)6px 6px;
   border: 1px solid #dcd3ca;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Tahoma", "Geneva", sans-serif;
   text-align: center;
-  font-size: 75%;
+  font-size: 80%;
   background: #ffffff;
   padding: 12px;
   position: relative;
-  color: #808b96;
-  left: 25px; /* align to always be the same no matter content size*/
-  width: 25%;
-  height: 200px;
+  color: #968B80;
+  top: 75px;
+  left: 280px;
+  width: 55%;
+
   overflow: scroll;
-}
-.selection1:hover
-{
-  color: #c4d0d5;
 }
 
 .selection2
 {
     display: inline-block;
-    top: 0px; /* align to always be the same no matter content size*/
+    border-radius: 10px;
     box-shadow:rgba(0,0,0,0.06)6px 6px;
     border: 1px solid #dcd3ca;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "Tahoma", "Geneva", sans-serif;
     text-align: center;
-    font-size: 75%;
+    font-size: 80%;
     background: #ffffff;
     padding: 12px;
     position: relative;
-    color: #808b96;
-    left: 64px; /*align to always be the same no matter content size*/
-    width: 50%;
-}
-
-.selection2:hover
-{
-  color: #c4d0d5;
-}
-
-.selection3
-{
-  display: inline-block;
-  top: 10px; /* align to always be the same no matter content size*/
-  box-shadow:rgba(0,0,0,0.06)6px 6px;
-  border: 1px solid #dcd3ca;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: center;
-  font-size: 75%;
-  background: #ffffff;
-  padding: 12px;
-  position: relative;
-  color: #808b96;
-  left: 600px; /*align to always be the same no matter content size*/
-  width: 50%;
-}
-
-.selection3:hover
-{
-  color: #c4d0d5;
-}
-
-.selection4
-{
-  display: inline-block;
-  top: 20px; /* align to always be the same no matter content size*/
-  box-shadow:rgba(0,0,0,0.06)6px 6px;
-  border: 1px solid #dcd3ca;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: center;
-  font-size: 75%;
-  background: #ffffff;
-  padding: 12px;
-  position: relative;
-  color: #808b96;
-  left: 400px; /*align to always be the same no matter content size*/
-  width: 50%;
-}
-
-.selection4:hover
-{
-  color: #c4d0d5;
+    color: #968B80;
+    top: 125px;
+    left: 280px; /*align to always be the same no matter content size*/
+    width: 55%;
 }
 
 .score
 {
   display: inline-block;
-  top: 220px; /* align to always be the same no matter content size*/
+  top: 75px; /* align to always be the same no matter content size*/
   box-shadow:rgba(0,0,0,0.06)6px 6px;
   border: 1px solid #dcd3ca;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Tahoma", "Geneva", sans-serif;
   text-align: center;
-  font-size: 75%;
+  font-size: 80%;
   background: #ffffff;
   padding: 12px;
   position: relative;
-  color: #808b96;
+  color: #968B80;
   left: 320px; /*align to always be the same no matter content size*/
   width: 50%;
-}
-
-.score:hover
-{
-  color: #c4d0d5;
 }

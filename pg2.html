@@ -22,49 +22,27 @@ Author: Judy H. Nguyen
         <br><br>
       </div>
 
-      <div class="selection1"><h2>Test 2</h2>
-        Congrats! <br>You have made it to your second test.
-        <br>Please take a look at these examples to help you figure out how to solve the problems.
-        <br>These examples are done with the inputs: fruits and veggies.
-        <h4>EXAMPLE 1</h4>
-        Pair: Banana and lettuce
-        <br>Answer: YG5S
-        <h4>EXAMPLE 2</h4>
-        Pair: Cherry and carrot
-        <br>Answer: RO4S
-        <h4>EXAMPLE 3</h4>
-        Pair: Lychee and beets
-        <br>Answer: RR3S
-        <h4>EXAMPLE 4</h4>
-        Pair: Persimmon and cucumber
-        <br>Answer: OG6S
-        <h4>EXAMPLE 5</h4>
-        Pair: Tomato and potato
-        <br>Answer: RB6S
+      <div class="selection1"><h2>Drink Size</h2>
+        Please choose your drink size.
       </div>
 
       <div class="selection2">
         <form id="pair1" action="form_action.asp">
           <br>
-          Pair: Dragon fruit and spinach<br>
-          <br><input onchange="calculateP1()" type="text" id="p1" value=""><br><br>
+          <img src="http://orig13.deviantart.net/3c1f/f/2016/343/5/6/small_coffee_by_mocchu-dar2o1x.gif" alt="small">
+          <img src="http://orig03.deviantart.net/048c/f/2016/343/9/d/med_coffee_by_mocchu-dar2o1y.gif" alt="med">
+          <img src="http://orig07.deviantart.net/2cb4/f/2016/343/3/3/large_coffee_by_mocchu-dar2o20.gif" alt="large">
+          <br>
+          <button onclick="smallCoffee()">small</button>
+          <button onclick="medCoffee()">medium</button>
+          <button onclick="lrgCoffee()">large</button>
+          <br>
+          <br>
         </form>
+        <span id="drinkSize">
+          
+        </span>
       </div>
-
-      <div class="selection3">
-        <form id="pair2" action="form_action.asp">
-          Pair: Strawberry and broccoli <br>
-          <br><input onchange="calculateP2()" type="text" id="p2" value=""><br><br>
-        </form>
-      </div>
-
-        <div class="selection4">
-          <form id="pair3" action="form_action.asp">
-            Pair: Mango and cabbage <br>
-            <br><input onchange="calculateP3()" type="text" id="p3" value=""><br><br>
-        </form>
-      </div>
-
     </div>
   </body>
 </html>
